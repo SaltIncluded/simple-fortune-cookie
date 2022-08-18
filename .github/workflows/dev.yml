@@ -1,0 +1,20 @@
+name: Development 
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - dev
+jobs:
+  Clone-down:
+    name: Clone-down-repo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout-repo
+        uses: actions/checkout@v2
+      - name: Upload-repo
+        uses: actions/upload-artifact@v2
+        with:
+          name: code
+          path: .
