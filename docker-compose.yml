@@ -13,3 +13,11 @@ services:
     restart: unless-stopped
     ports:
       - 9000:9000
+  database:
+    build:
+      context: ./database
+    restart: unless-stopped
+    ports:
+      - 6397:6397
+    volumes:
+      - "./data/database:/data"
