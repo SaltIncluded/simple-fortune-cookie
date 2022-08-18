@@ -32,6 +32,8 @@ jobs:
           path: .
       - name: Build
         run: chmod +x ci/build-frontend.sh && ci/build-frontend.sh
+      - name: Test
+        run: chmod +x ci/test-frontend.sh && ci/test-frontend.sh
       - name: Upload-repo
         uses: actions/upload-artifact@v2
         with:
