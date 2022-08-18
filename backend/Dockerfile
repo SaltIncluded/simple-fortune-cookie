@@ -8,4 +8,5 @@ RUN go get && \
 
 FROM scratch as app
 COPY --from=builder /app /app
+EXPOSE 9000
 ENTRYPOINT ["/app"]
