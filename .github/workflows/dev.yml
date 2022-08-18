@@ -42,3 +42,29 @@ jobs:
         with:
           name: backend-binary
           path: ./build/backend/app
+  Build-frontend:
+    needs: [Clone-down]
+    name: Build-frontend
+    runs-on: ubuntu-latest
+    container:
+      image: golang:1.16
+    steps:
+      - name: Download-repo
+        uses: actions/download-artifact@v2
+        with:
+          name: code
+          path: .
+      - name: Build
+        run: chmod +x ci/build-frontend.sh && ci/build-frontend.sh
+      - name: Test
+        run: chmod +x ci/test-frontend.sh && ci/test-frontend.sh
+      - name: Upload-repo
+        uses: actions/upload-artifact@v2
+        with:
+          name: code
+          path: .
+      - name: Upload-binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: frontend-binary
+          path: ./build/frontend/app
