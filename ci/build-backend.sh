@@ -1,6 +1,6 @@
 #!/bin/bash
-pwd
-cd /backend
+ls
+cd ./backend
 go mod download
 go get
 go build
