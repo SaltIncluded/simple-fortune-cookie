@@ -37,3 +37,8 @@ jobs:
         with:
           name: code
           path: .
+      - name: Upload-binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: backend-binary
+          path: ./build/backend/app

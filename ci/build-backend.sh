@@ -2,4 +2,4 @@
 cd ./backend
 go mod download
 go get
-go build -o build/backend
+go build -o ../build/backend/app
