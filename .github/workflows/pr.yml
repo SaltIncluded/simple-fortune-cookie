@@ -9,7 +9,7 @@ on:
 jobs:
   Clone-down:
     name: Clone-down-repo
-    runs-on: [inst12-pr]
+    runs-on: [inst12-pr, ubuntu:latest]
     steps:
       - name: Checkout-repo
         uses: actions/checkout@v2
@@ -21,7 +21,7 @@ jobs:
   Build-backend:
     needs: [Clone-down]
     name: Build-backend
-    runs-on: [inst12-pr]
+    runs-on: [inst12-pr, ubuntu:latest]
     container:
       image: golang:1.16
     steps:
