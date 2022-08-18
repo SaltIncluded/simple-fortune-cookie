@@ -1,12 +1,16 @@
 name: Development 
-on: push
+on:
+  push:
+    branches:
+      - "dev/**"
 jobs:
   Clone-down:
     name: Clone down repo
     runs-on: ubuntu-latest
     container: gradle:6-jdk11
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Repo
+        uses: actions/checkout@v2
       - name: Upload Repo
         uses: actions/upload-artifact@v2
         with:
