@@ -8,13 +8,12 @@ on:
       - main
 jobs:
   Clone-down:
-    name: Clone down repo
+    name: Clone-down-repo
     runs-on: ubuntu-latest
-    container: gradle:6-jdk11
     steps:
-      - name: checkout Repo
+      - name: Checkout-repo
         uses: actions/checkout@v2
-      - name: Upload Repo
+      - name: Upload-repo
         uses: actions/upload-artifact@v2
         with:
           name: code
