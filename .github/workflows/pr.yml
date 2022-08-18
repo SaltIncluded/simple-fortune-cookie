@@ -1,8 +1,11 @@
 name: Production
-on: 
+on:
   push:
-    branches: 
-      - "main/**"
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 jobs:
   Clone-down:
     name: Clone down repo
